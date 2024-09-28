@@ -1,0 +1,39 @@
+<div class="container text-center"></div>
+    <form class="box" method="POST" action="/user/create_address">
+
+        <% message.forEach((m)=> {%>
+            <h4 class="<%=success ? 'color-success' : 'color-error'%>">
+                <%=m%>
+            </h4>
+        <% }); %>
+
+        <h3>Cím típusa</h3>
+        <select name="addressType">
+            <option value="0">Válassz típust</option> 
+            <% addressTypes.forEach((a)=> { %>
+                <option value="<%= a.typeID %>"><%= a.typeName %></option>
+            <% }) >% 
+        </select>
+
+        <h3>Írányítószám</h3>
+        <input type="text" name="postalCode">
+
+        <h3>Település</h3>
+        <input type="text" name="settlement">
+
+        <h3>Közterület neve és jellege</h3>
+        <input type="text" name="street">
+
+        <h3>Házszám</h3>
+        <input type="text" name="houseNumber">
+
+        <h3>Emelet</h3>
+        <input type="text" name="floorNumber">
+
+        <h3>Ajtó</h3>
+        <input type="text" name="doorNumber">
+
+        <button>Mentés</button>
+    </form>
+</div>
+
